@@ -1,0 +1,36 @@
+@import '../../styles/variables.scss';
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  @media (min-width: $tablet) {
+    gap: 40px;
+  }
+
+  @media (min-width: $laptop) {
+    flex-direction: row;
+    gap: 32px;
+    height: 737px;
+    position: relative;
+  }
+  
+  &::after {
+    content: '';
+    background: linear-gradient(290.1deg, #D6E6FE 0%, rgba(214, 252, 254, 0) 100%);
+    border-radius: 0px 0px 35px 35px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 640px;
+    z-index: -1;
+    
+    @media (min-width: $laptop) {
+      width: 978px;
+      height: 737px;
+      left: -116px;
+    }
+  }
+}

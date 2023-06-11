@@ -1,0 +1,45 @@
+@import '../../styles/variables.scss';
+
+.heroText {
+  text-align: center;
+  padding-top: 32px;
+
+  @media (min-width: $laptop) {
+    flex: 1;
+    text-align: left;
+    padding-top: 75px;
+    max-width: 564px;
+  }
+
+  &__logo {
+    height: 40px;
+    margin-inline: auto;
+    margin-bottom: 24px;
+
+    @media (min-width: $laptop) {
+      margin-inline: 0;
+      margin-bottom: 127px;
+    }
+  }
+
+  &__title {
+    font-size: $fs-mob-header;
+    line-height: $lh-mob-header;
+    letter-spacing: -0.5px;
+    margin-bottom: 24px;
+    color: $clr-400;
+    font-weight: $fw-bold;
+
+    @media (min-width: $tablet) {
+      max-width: 380px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: $laptop) {
+      max-width: none;
+      margin-bottom: 35px;
+      font-size: $fs-desktop-header;
+      line-height: $lh-desktop-header;
+    }
+  }
+}

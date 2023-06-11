@@ -1,0 +1,113 @@
+@import '../../styles/variables.scss';
+
+.section_limitations {
+  padding-top: 72px;
+  @media (min-width: $tablet) {
+    padding-top: 96px;
+  }
+  @media (min-width: $laptop) {
+    padding-top: 120px;
+  }
+}
+
+
+.limitations {
+  padding-bottom: 96px;
+  background: $clr-100;
+  position: relative;
+
+  &__title {
+    font-size: $fs-mob-subheader;
+    line-height: $lh-mob-subheader;
+    color: $clr-400;
+    letter-spacing: -0.5px;
+    margin-bottom: 32px;
+    text-align: center;
+
+    @media (min-width: $laptop) {
+      text-align: left;
+      font-size: $fs-desktop-subheader;
+      line-height: $lh-desktop-subheader;
+    }
+  }
+
+  &__caption {
+    margin-bottom: 56px;
+    text-align: center;
+
+    @media (min-width: $laptop) {
+      text-align: left;
+      max-width: 480px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    justify-content: center;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(0, 335px));
+
+    @media (min-width: $laptop) {
+      grid-template-columns: repeat(2, 365px);
+      position: absolute;
+      right: 0;
+      top: 0;
+      padding-bottom: 96px;
+    }
+  }
+
+  &__item {
+    background: $clr-100;
+    box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+    border-radius: 16px;
+    padding: 24px;
+
+    @media (min-width: $tablet) {
+      padding: 32px;
+    }
+    @media (min-width: $laptop) {
+      width: 365px;
+
+      &:nth-child(2), &:nth-child(3) {
+        z-index: 2;
+      }
+  
+      &:last-child, &:nth-child(4) {
+        transform: translateX(-200px);
+        z-index: 3;
+      }
+  
+      &:first-child {
+        grid-column: 2;
+        transform: translateX(-100px);
+      }
+    }
+
+    &:last-child {
+      @media (min-width: $tablet) {
+        grid-column: span 2;
+        margin-inline: 175px;
+      }
+      @media (min-width: $laptop) {
+        grid-column: span 1;
+        margin-inline: 0;
+      }
+    }
+
+
+    &Header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    &Title {
+      color: $clr-400;
+      letter-spacing: -0.5px;
+      font-size: $fs-mob-tinyheader;
+      line-height: $lh-mob-tinyheader;
+      font-weight: $fw-bold;
+    }
+  }
+}

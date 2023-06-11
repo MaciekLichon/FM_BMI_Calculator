@@ -1,0 +1,126 @@
+@import '../../styles/variables.scss';
+
+.calculator {
+  padding: 24px;
+  background: $clr-100;
+  border-radius: 16px;
+  box-shadow: 16px 32px 56px rgba(143, 174, 207, 0.25);
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  font-weight: $fw-bold;
+  color: $clr-400;
+
+  @media (min-width: $tablet) {
+    padding: 32px;
+  }
+
+  @media (min-width: $laptop) {
+    flex: 1;
+    align-self: center;
+    max-width: 564px;
+  }
+
+  &__title {
+    line-height: 29px;
+    letter-spacing: -0.5px;
+  }
+
+  &__checkboxes {
+    display: flex;
+    justify-content: space-between;
+
+    .calculator__input {
+      flex: 1;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+
+      &Name {
+        order: 1;
+      }
+
+      &Field {
+        appearance: none;
+        height: 31px;
+        width: 31px;
+        border: 1px solid $clr-200;
+        border-radius: 50%;
+
+        &:checked {
+          background: rgba(52, 95, 246, 0.15);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          &::after {
+            content: '';
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: $clr-accent;
+          }
+        }
+      }
+    }
+  }
+
+  &__textInputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: $tablet) {
+      flex-direction: row;
+    }
+
+    @media (min-width: $laptop) {
+      flex-direction: column;
+    }
+
+    .calculator__input {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+
+      &Boxes {
+        display: flex;
+        gap: 16px;
+
+        @media (min-width: $tablet) {
+          flex-direction: column;
+        }
+
+        @media (min-width: $laptop) {
+          flex-direction: row;
+        }
+      }
+      &Box {
+        flex: 1;
+        position: relative;
+        font-size: 24px;
+      }
+      &Name{
+        margin-bottom: 8px;
+        font-weight: $fw-regular;
+        color: $clr-300;
+        font-size: 14px;
+      }
+      &Unit {
+        position: absolute;
+        right: 24px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: $clr-accent;
+      }
+      &Field {
+        width: 100%;
+        padding: 20px 60px 20px 24px;
+        border-radius: 12px;
+        border: 1px solid $clr-200;
+      }
+    }
+  }
+}

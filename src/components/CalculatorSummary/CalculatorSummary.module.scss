@@ -1,0 +1,54 @@
+@import '../../styles/variables.scss';
+
+.calculatorSummary {
+  background: linear-gradient(90deg, #345FF7 0%, #587DFF 100%);
+  border-radius: 16px;
+  padding: 32px;
+  color: $clr-100;
+
+  @media (min-width: $tablet) {
+    border-radius: 16px 100px 100px 16px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: center;
+  }
+
+  &__BMIValue {
+    font-size: $fs-mob-header;
+    line-height: $lh-mob-header;
+
+    @media (min-width: $laptop) {
+      font-size: 64px;
+      line-height: 70px;
+    }
+  }
+
+  &__messageOne {
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: -0.5px;
+    font-weight: $fw-bold;
+    margin-bottom: 16px;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: $fw-regular;
+  }
+
+  &__details {
+    margin-top: 24px;
+    font-weight: $fw-regular;
+    font-size: 14px;
+
+    @media (min-width: $tablet) {
+      max-width: 267px;
+      margin-top: 0;
+    }
+  }
+}
